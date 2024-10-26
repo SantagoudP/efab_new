@@ -41,11 +41,11 @@ jobs:
         run: |
           tar -cf /tmp/caravel.tar -C $CARAVEL_ROOT .
 
-      - name: Upload Caravel Tarball
-        uses: actions/upload-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: caravel-tarball
-          path: /tmp/caravel.tar
+          name: caravel-artifact
+          path: ./build-output/
   
   download_deps:
     runs-on: ubuntu-latest
