@@ -95,7 +95,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: caravel-tarball
-          path: /tmp
+          path: /tmp/caravel.tar
 
       - name: Unpack caravel Tarball
         run: |
@@ -193,7 +193,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: openlane-issue-reproducible
-          path: |
+          path: /tmp/caravel.tar
             $GITHUB_WORKSPACE/issue_reproducible.tar
       
       - name: Tarball Design_${{ matrix.pdk }}
